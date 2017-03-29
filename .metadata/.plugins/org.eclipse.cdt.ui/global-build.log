@@ -1,0 +1,698 @@
+17:00:12 **** Clean-only build of configuration Debug for project Lab1 ****
+make clean 
+rm -rf  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o  ./Sources/FIFO.d ./Sources/UART.d ./Sources/main.d ./Sources/packet.d  ./Project_Settings/Startup_Code/startup.d  ./Generated_Code/Cpu.d ./Generated_Code/PE_LDD.d ./Generated_Code/Vectors.d  Lab1.elf
+' '
+17:00:13 **** Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/FIFO.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/FIFO.d" -MT"Sources/FIFO.o" -c -o "Sources/FIFO.o" "../Sources/FIFO.c"
+'Finished building: ../Sources/FIFO.c'
+' '
+'Building file: ../Sources/UART.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/UART.d" -MT"Sources/UART.o" -c -o "Sources/UART.o" "../Sources/UART.c"
+'Finished building: ../Sources/UART.c'
+' '
+'Building file: ../Sources/main.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:88:2: warning: implicit declaration of function 'HandlePacket' [-Wimplicit-function-declaration]
+  HandlePacket();
+  ^
+'Finished building: ../Sources/main.c'
+' '
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Put':
+../Sources/packet.c:105:3: warning: implicit declaration of function 'calculateChecksum' [-Wimplicit-function-declaration]
+   return(UART_OutChar(command) && UART_OutChar(parameter1) && UART_OutChar(parameter2) && UART_OutChar(parameter3) && UART_OutChar(calculateChecksum(Packet_Command,Packet_Parameter1,Packet_Parameter2,Packet_Parameter3)));
+   ^
+'Finished building: ../Sources/packet.c'
+' '
+'Building file: ../Project_Settings/Startup_Code/startup.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Project_Settings/Startup_Code/startup.d" -MT"Project_Settings/Startup_Code/startup.o" -c -o "Project_Settings/Startup_Code/startup.o" "../Project_Settings/Startup_Code/startup.c"
+'Finished building: ../Project_Settings/Startup_Code/startup.c'
+' '
+'Building file: ../Generated_Code/Cpu.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+'Finished building: ../Generated_Code/Cpu.c'
+' '
+'Building file: ../Generated_Code/PE_LDD.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+'Finished building: ../Generated_Code/PE_LDD.c'
+' '
+'Building file: ../Generated_Code/Vectors.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Vectors.d" -MT"Generated_Code/Vectors.o" -c -o "Generated_Code/Vectors.o" "../Generated_Code/Vectors.c"
+'Finished building: ../Generated_Code/Vectors.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+17:01:51 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+17:02:52 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Get':
+../Sources/packet.c:37:4: warning: implicit declaration of function 'Check_Checksum' [-Wimplicit-function-declaration]
+    if(Check_Checksum()){
+    ^
+../Sources/packet.c: At top level:
+../Sources/packet.c:108:6: error: conflicting types for 'Check_Checksum'
+ bool Check_Checksum(void){
+      ^
+../Sources/packet.c:37:7: note: previous implicit declaration of 'Check_Checksum' was here
+    if(Check_Checksum()){
+       ^
+make: *** [Sources/packet.o] Error 1
+17:03:02 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+17:10:51 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:12:31: error: expected ')' before ';' token
+ #define CMD_TOWER_STARTUP 0x04;
+                               ^
+../Sources/packet.c:69:24: note: in expansion of macro 'CMD_TOWER_STARTUP'
+   if(Packet_Command == CMD_TOWER_STARTUP){
+                        ^
+../Sources/packet.c:12:31: error: expected ')' before ';' token
+ #define CMD_TOWER_STARTUP 0x04;
+                               ^
+../Sources/packet.c:70:18: note: in expansion of macro 'CMD_TOWER_STARTUP'
+       Packet_Put(CMD_TOWER_STARTUP,0,0,0);
+                  ^
+../Sources/packet.c:12:31: error: too few arguments to function 'Packet_Put'
+ #define CMD_TOWER_STARTUP 0x04;
+                               ^
+../Sources/packet.c:70:18: note: in expansion of macro 'CMD_TOWER_STARTUP'
+       Packet_Put(CMD_TOWER_STARTUP,0,0,0);
+                  ^
+../Sources/packet.c:58:6: note: declared here
+ bool Packet_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3){
+      ^
+make: *** [Sources/packet.o] Error 1
+17:11:40 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:12:32: error: expected ')' before ';' token
+ #define CMD_TOWER_STARTUP 0x04u;
+                                ^
+../Sources/packet.c:69:24: note: in expansion of macro 'CMD_TOWER_STARTUP'
+   if(Packet_Command == CMD_TOWER_STARTUP){
+                        ^
+../Sources/packet.c:12:32: error: expected ')' before ';' token
+ #define CMD_TOWER_STARTUP 0x04u;
+                                ^
+../Sources/packet.c:70:18: note: in expansion of macro 'CMD_TOWER_STARTUP'
+       Packet_Put(CMD_TOWER_STARTUP,0,0,0);
+                  ^
+../Sources/packet.c:12:32: error: too few arguments to function 'Packet_Put'
+ #define CMD_TOWER_STARTUP 0x04u;
+                                ^
+../Sources/packet.c:70:18: note: in expansion of macro 'CMD_TOWER_STARTUP'
+       Packet_Put(CMD_TOWER_STARTUP,0,0,0);
+                  ^
+../Sources/packet.c:58:6: note: declared here
+ bool Packet_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3){
+      ^
+make: *** [Sources/packet.o] Error 1
+17:11:53 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+17:11:58 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+18:10:08 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:29:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   Tower_Number = 2820;
+   ^
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:77:36: error: 'TowerVersion' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_VERSION,TowerVersion,0,0);
+                                    ^
+../Sources/packet.c:77:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Sources/packet.o] Error 1
+18:43:38 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:82:7: error: 'TOWER_STARTUP' undeclared (first use in this function)
+       TOWER_STARTUP;
+       ^
+../Sources/packet.c:82:7: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c:91:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:103:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:103:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:107:3: error: unknown type name 'uint16'
+   uint16 lastfourNumbers = studentNumber % 10000;
+   ^
+../Sources/packet.c:108:3: warning: implicit declaration of function 'TOWERNUMBER_MSB' [-Wimplicit-function-declaration]
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8)
+   ^
+../Sources/packet.c:108:20: error: expected expression before 'uint8_t'
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8)
+                    ^
+../Sources/packet.c:108:31: error: 'fourNumbers' undeclared (first use in this function)
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8)
+                               ^
+../Sources/packet.c:109:3: error: expected ')' before 'TOWERNUMBER_LSB'
+   TOWERNUMBER_LSB (uint8_t)((fourNumbers & 0xFF);
+   ^
+../Sources/packet.c:110:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+18:43:58 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:84:7: error: 'TOWER_STARTUP' undeclared (first use in this function)
+       TOWER_STARTUP;
+       ^
+../Sources/packet.c:84:7: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c:93:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:105:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:105:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:109:3: error: unknown type name 'uint16'
+   uint16 lastfourNumbers = studentNumber % 10000;
+   ^
+../Sources/packet.c:110:3: warning: implicit declaration of function 'TOWERNUMBER_MSB' [-Wimplicit-function-declaration]
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+   ^
+../Sources/packet.c:110:20: error: expected expression before 'uint8_t'
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                    ^
+../Sources/packet.c:110:31: error: 'fourNumbers' undeclared (first use in this function)
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                               ^
+../Sources/packet.c:110:54: error: expected ')' before ';' token
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                                                      ^
+../Sources/packet.c:112:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+18:44:16 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:93:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:93:35: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:105:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:105:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:110:3: warning: implicit declaration of function 'TOWERNUMBER_MSB' [-Wimplicit-function-declaration]
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+   ^
+../Sources/packet.c:110:20: error: expected expression before 'uint8_t'
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                    ^
+../Sources/packet.c:110:31: error: 'fourNumbers' undeclared (first use in this function)
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                               ^
+../Sources/packet.c:110:54: error: expected ')' before ';' token
+   TOWERNUMBER_MSB (uint8_t)(((fourNumbers & 0x1F)>>8);
+                                                      ^
+../Sources/packet.c:112:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+18:45:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:93:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:93:35: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:105:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:105:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:110:33: error: 'fourNumbers' undeclared (first use in this function)
+   Tower_Number_MSB = (uint8_t)((fourNumbers & 0x1F)>>8);
+                                 ^
+../Sources/packet.c:111:52: error: expected ')' before ';' token
+   Tower_Number_LSB = (uint8_t)((fourNumbers & 0xFF);
+                                                    ^
+../Sources/packet.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+18:45:19 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:93:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:93:35: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:105:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:105:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:111:56: error: expected ')' before ';' token
+   Tower_Number_LSB = (uint8_t)((lastfourNumbers & 0xFF);
+                                                        ^
+../Sources/packet.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+18:45:29 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:93:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:93:35: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c: In function 'TowerNumber_Send':
+../Sources/packet.c:105:33: error: 'TOWERNUMBER_LSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                 ^
+../Sources/packet.c:105:49: error: 'TOWERNUMBER_MSB' undeclared (first use in this function)
+   Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB);
+                                                 ^
+make: *** [Sources/packet.o] Error 1
+18:46:15 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:95:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:95:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Sources/packet.o] Error 1
+18:52:26 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:42:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   HandleTowerNumber(STUDENT_NUMBER1);
+   ^
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:94:35: error: 'Tower_Number' undeclared (first use in this function)
+       Packet_Put(CMD_TOWER_NUMBER,Tower_Number,0,0);
+                                   ^
+../Sources/packet.c:94:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Sources/packet.o] Error 1
+19:01:14 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:42:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   HandleTowerNumber(STUDENT_NUMBER1);
+   ^
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:84:5: warning: implicit declaration of function 'TowerStartup_Send' [-Wimplicit-function-declaration]
+     TowerStartup_Send();
+     ^
+../Sources/packet.c:87:7: warning: implicit declaration of function 'TowerVersion_Send' [-Wimplicit-function-declaration]
+       TowerVersion_Send();
+       ^
+../Sources/packet.c: At top level:
+../Sources/packet.c:105:6: warning: conflicting types for 'TowerVersion_Send' [enabled by default]
+ void TowerVersion_Send(){
+      ^
+../Sources/packet.c:87:7: note: previous implicit declaration of 'TowerVersion_Send' was here
+       TowerVersion_Send();
+       ^
+../Sources/packet.c:116:6: warning: conflicting types for 'TowerStartup_Send' [enabled by default]
+ void TowerStartup_Send(){
+      ^
+../Sources/packet.c:84:5: note: previous implicit declaration of 'TowerStartup_Send' was here
+     TowerStartup_Send();
+     ^
+../Sources/packet.c:126:6: error: conflicting types for 'HandleTowerNumber'
+ void HandleTowerNumber(int studentNumber){
+      ^
+../Sources/packet.c:26:6: note: previous declaration of 'HandleTowerNumber' was here
+ void HandleTowerNumber(uint16_t studentNumber);
+      ^
+make: *** [Sources/packet.o] Error 1
+19:02:31 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:40:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   HandleTowerNumber(10692820);
+   ^
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:82:5: warning: implicit declaration of function 'TowerStartup_Send' [-Wimplicit-function-declaration]
+     TowerStartup_Send();
+     ^
+../Sources/packet.c:85:7: warning: implicit declaration of function 'TowerVersion_Send' [-Wimplicit-function-declaration]
+       TowerVersion_Send();
+       ^
+../Sources/packet.c: At top level:
+../Sources/packet.c:103:6: warning: conflicting types for 'TowerVersion_Send' [enabled by default]
+ void TowerVersion_Send(){
+      ^
+../Sources/packet.c:85:7: note: previous implicit declaration of 'TowerVersion_Send' was here
+       TowerVersion_Send();
+       ^
+../Sources/packet.c:114:6: warning: conflicting types for 'TowerStartup_Send' [enabled by default]
+ void TowerStartup_Send(){
+      ^
+../Sources/packet.c:82:5: note: previous implicit declaration of 'TowerStartup_Send' was here
+     TowerStartup_Send();
+     ^
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:02:58 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:40:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   HandleTowerNumber(10692820);
+   ^
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:82:5: warning: implicit declaration of function 'TowerStartup_Send' [-Wimplicit-function-declaration]
+     TowerStartup_Send();
+     ^
+../Sources/packet.c:85:7: warning: implicit declaration of function 'TowerVersion_Send' [-Wimplicit-function-declaration]
+       TowerVersion_Send();
+       ^
+../Sources/packet.c: At top level:
+../Sources/packet.c:103:6: warning: conflicting types for 'TowerVersion_Send' [enabled by default]
+ void TowerVersion_Send(void){
+      ^
+../Sources/packet.c:85:7: note: previous implicit declaration of 'TowerVersion_Send' was here
+       TowerVersion_Send();
+       ^
+../Sources/packet.c:114:6: warning: conflicting types for 'TowerStartup_Send' [enabled by default]
+ void TowerStartup_Send(void){
+      ^
+../Sources/packet.c:82:5: note: previous implicit declaration of 'TowerStartup_Send' was here
+     TowerStartup_Send();
+     ^
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:03:27 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'TowerStartup_Send':
+../Sources/packet.c:29:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'uint8_t'
+ uint8_t NumBytes,
+ ^
+../Sources/packet.c:38:68: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ bool Packet_Init(const uint32_t baudRate, const uint32_t moduleClk){
+                                                                    ^
+../Sources/packet.c:51:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ bool Packet_Get(void){
+                      ^
+../Sources/packet.c:71:117: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ bool Packet_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3){
+                                                                                                                     ^
+../Sources/packet.c:76:26: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ bool Check_Checksum(void){
+                          ^
+../Sources/packet.c:80:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void HandlePacket(void){
+                        ^
+../Sources/packet.c:94:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void TowerNumber_Send(){
+                        ^
+../Sources/packet.c:104:29: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void TowerVersion_Send(void){
+                             ^
+../Sources/packet.c:115:29: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void TowerStartup_Send(void){
+                             ^
+../Sources/packet.c:125:47: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void HandleTowerNumber(uint16_t studentNumber){
+                                               ^
+../Sources/packet.c:131:1: error: expected '{' at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+19:03:34 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'Packet_Init':
+../Sources/packet.c:41:3: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+   HandleTowerNumber(10692820);
+   ^
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:03:52 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:23:27 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandleTowerNumber':
+../Sources/packet.c:157:41: error: 'studentNumber' undeclared (first use in this function)
+   uint16_t lastfourNumbers = (uint16_t)(studentNumber % 10000);
+                                         ^
+../Sources/packet.c:157:41: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:161:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+19:23:41 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:161:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+19:24:08 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+../Sources/packet.c: In function 'HandlePacket':
+../Sources/packet.c:164:1: error: expected declaration or statement at end of input
+ }
+ ^
+make: *** [Sources/packet.o] Error 1
+19:24:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:25:55 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/main.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:88:2: warning: implicit declaration of function 'HandlePacket' [-Wimplicit-function-declaration]
+  HandlePacket();
+  ^
+'Finished building: ../Sources/main.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:27:38 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/main.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+'Finished building: ../Sources/main.c'
+' '
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:31:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+19:31:41 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+19:42:05 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:42:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.
+19:51:28 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+'Building file: ../Sources/packet.c'
+'Invoking: Cross ARM C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/PDD" -I"C:/Users/10692820/Desktop/ES/Lab1/Static_Code/IO_Map" -I"C:/Users/10692820/Desktop/ES/Lab1/Sources" -I"C:/Users/10692820/Desktop/ES/Lab1/Generated_Code" -std=c99 -MMD -MP -MF"Sources/packet.d" -MT"Sources/packet.o" -c -o "Sources/packet.o" "../Sources/packet.c"
+'Finished building: ../Sources/packet.c'
+' '
+'Building target: Lab1.elf'
+'Invoking: Cross ARM C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/10692820/Desktop/ES/Lab1/Project_Settings/Linker_Files" -Wl,-Map,"Lab1.map" -specs=nano.specs -specs=nosys.specs -o "Lab1.elf"  ./Sources/FIFO.o ./Sources/UART.o ./Sources/main.o ./Sources/packet.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/Cpu.o ./Generated_Code/PE_LDD.o ./Generated_Code/Vectors.o   
+'Finished building target: Lab1.elf'
+' '
+19:51:33 **** Incremental Build of configuration Debug for project Lab1 ****
+make all 
+make: Nothing to be done for `all'.

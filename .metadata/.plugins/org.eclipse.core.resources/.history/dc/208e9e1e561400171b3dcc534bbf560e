@@ -1,0 +1,130 @@
+/*
+ * packet.c
+ *
+ *  Created on: 22 Mar 2017
+ *      Author: 10692820
+ */
+
+#include "packet.h"
+#include "UART.h"
+
+#define CMD_TOWER_STARTUP 0x04
+#define CMD_TOWER_VERSION 0x09
+#define CMD_TOWER_NUMBER 0x0B
+
+#define SEND_TOWER_STARTUP Packet_Put(CMD_TOWER_STARTUP,0,0,0)
+#define SEND_TOWER_VERSION Packet_Put(CMD_TOWER_VERSION,118,1,00)
+
+#define SEND_TOWER_NUMBER Packet_Put(CMD_TOWER_NUMBER,1,TOWERNUMBER_LSB,TOWERNUMBER_MSB)
+
+
+
+bool Check_Checksum(void);
+void HandlePacket(void);
+void HandleTowerNumber(uint16_t studentNumber);
+void TowerNumber_Send();
+
+//uint16_t Tower_Number;
+uint8_t NumBytes,
+	Tower_Number_MSB,
+	Tower_Number_LSB,
+	Packet_Command,		/*!< Initialising the packet's command */
+	Packet_Parameter1,	/*!< Initialising the packet's parameter1 */
+	Packet_Parameter2,	/*!< Initialising the packet's parameter2 */
+	Packet_Parameter3,	/*!< Initialising the packet's parameter3 */
+	Packet_Checksum;	/*!< Initialising the packet's checksum */
+
+bool Packet_Init(const uint32_t baudRate, const uint32_t moduleClk){
+  Tower_Number_MSB = 0;
+  Tower_Number_LSB = 0;
+  HandleTowerNumber(10692820);
+  NumBytes = 0;
+  Packet_Command = 0;
+  Packet_Parameter1 = 0;
+  Packet_Parameter2 = 0;
+  Packet_Parameter3 = 0;
+  Packet_Checksum = 0;
+  return UART_Init(baudRate,moduleClk);
+}
+
+bool Packet_Get(void){
+  if(UART_InChar(&Packet_Checksum)){
+      NumBytes++;
+      if (NumBytes == 5){
+	  if(Check_Checksum()){
+	      NumBytes = 0;
+	      return true;
+	  }
+	  else{
+	      Packet_Command = Packet_Parameter1;
+	      Packet_Parameter1 = Packet_Parameter2;
+	      Packet_Parameter2 = Packet_Parameter3;
+	      Packet_Parameter3 = Packet_Checksum;
+	      NumBytes--;
+	  }
+      }
+  }
+  return false;
+}
+
+bool Packet_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3){
+  // Puts each byte into the FIFO and returns true if all is successful
+  return(UART_OutChar(command) && UART_OutChar(parameter1) && UART_OutChar(parameter2) && UART_OutChar(parameter3) && UART_OutChar(command ^ parameter1 ^ parameter2 ^ parameter3));
+}
+
+bool Check_Checksum(void){
+  return (Packet_Checksum == (Packet_Command ^ Packet_Parameter1 ^ Packet_Parameter2 ^ Packet_Parameter3));
+}
+
+void HandlePacket(void){
+
+  if(Packet_Command == CMD_TOWER_STARTUP)
+    TowerStartup_Send();
+
+  if(Packet_Command == CMD_TOWER_VERSION)
+      TowerVersion_Send();
+
+  if(Packet_Command == CMD_TOWER_NUMBER)
+      TowerNumber_Send();
+
+
+}
+
+void TowerNumber_Send(){
+  /*
+   * Tower Number
+   * Parameter 1: 1
+   * Parameter 2: Tower_Number_LSB
+   * Parameter 3: Tower_Number_MSB
+   */
+  Packet_Put(CMD_TOWER_NUMBER,1,Tower_Number_LSB,Tower_Number_MSB);
+}
+
+void TowerVersion_Send(){
+  /*
+   * Special – Tower version
+   * Parameter 1: ‘v’ = version
+   * Parameter 2: Major Version Number
+   * Parameter 3: Minor Version Number (out of 100)
+   * Note: e.g. V1.3 has a major version number of 1 and a minor version number of 30.
+   */
+  Packet_Put(CMD_TOWER_VERSION,118,1,0);
+}
+
+void TowerStartup_Send(){
+  /*
+   * Tower Startup
+   * Parameter 1: 0
+   * Parameter 2: 0
+   * Parameter 3: 0
+   */
+  Packet_Put(CMD_TOWER_STARTUP,0,0,0);
+}
+
+void HandleTowerNumber(uint16_t studentNumber){
+  /* Gets the last four numbers from the studentNumber */
+  uint16_t lastfourNumbers = (uint16_t)(studentNumber % 10000);
+  /* Splits the binary of the last four numbers */
+  Tower_Number_MSB = (uint8_t)((lastfourNumbers & 0x1F)>>8);
+  Tower_Number_LSB = (uint8_t)(lastfourNumbers & 0xFF);
+}

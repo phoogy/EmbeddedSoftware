@@ -49,7 +49,7 @@ int main(void)
 
   Packet_Init(baudRate,CPU_BUS_CLK_HZ);
 
-  uint8_t data, dataPtr = 0;
+  //uint8_t data, dataPtr = 0;
 //  data = 1;
   //UART2_S1 |= UART_S1_TDRE_MASK;
 
