@@ -11,14 +11,14 @@
 #ifndef FIFO_H
 #define FIFO_H
 
-// new types
+// New types
 #include "types.h"
 
 // Number of bytes in a FIFO
 #define FIFO_SIZE 256
 
 /*!
- * @struct TFIFO
+ *  @struct TFIFO
  */
 typedef struct
 {

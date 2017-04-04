@@ -11,7 +11,7 @@
 #ifndef UART_H
 #define UART_H
 
-// new types
+// New types
 #include "types.h"
 
 /*! @brief Sets up the UART interface before first use.

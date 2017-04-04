@@ -1,14 +1,12 @@
-/*
- * UART.c
- *
- *  Created on: 22 Mar 2017
- *      Author: 10692820
+/*! @file UART.c
+ *  @brief Contains the functions for operating the UART (serial port).
+ *  @author Phong 10692820 & Emily 12016681
+ *  @date 22 Mar 2017
  */
 
-
-#include "UART.h"							// Header file for UART module
-#include "FIFO.h"							// Header file for FIFO module
-#include "MK70F12.h"							// Header file containing peripheral memory map of the MK70F12
+#include "UART.h"		// Header file for UART module
+#include "FIFO.h"		// Header file for FIFO module
+#include "MK70F12.h"		// Header file containing peripheral memory map of the MK70F12
 
 static TFIFO TxFIFO, RxFIFO;
 
@@ -34,8 +32,8 @@ bool UART_Init(const uint32_t baudRate, const uint32_t moduleClk){
   /* Set baudRate register high & low bits and turn off everything else in BDH register*/
   UART2_BDH = (uint8_t)((baudDivisor & UART_BDH_SBR_MASK)>>8);
   UART2_BDL = (uint8_t)(baudDivisor & UART_BDL_SBR_MASK);
-  UART2_BDH &= ~UART_BDH_LBKDIE_MASK;					// Disable LIN Break Detect Interrupt by setting bit to 0
-  UART2_BDH &= ~UART_BDH_RXEDGIE_MASK;				// Disable RxD Input Active Edge Interrupt by setting bit to 0
+  UART2_BDH &= ~UART_BDH_LBKDIE_MASK;		// Disable LIN Break Detect Interrupt by setting bit to 0
+  UART2_BDH &= ~UART_BDH_RXEDGIE_MASK;		// Disable RxD Input Active Edge Interrupt by setting bit to 0
 
   /* Determine if fineAdjust is needed to get closer to the baud rate */
   uint16_t fineAdjust = (((moduleClk*32)/(baudRate * 16)) - (baudDivisor * 32));
@@ -77,10 +75,10 @@ bool UART_Init(const uint32_t baudRate, const uint32_t moduleClk){
   UART2_C3 &= ~UART_C3_R8_MASK;
 
   /* Turn off everything in C3*/
-    UART2_C5 &= ~UART_C5_RDMAS_MASK;
-    UART2_C5 &= ~UART_C5_TDMAS_MASK;
+  UART2_C5 &= ~UART_C5_RDMAS_MASK;
+  UART2_C5 &= ~UART_C5_TDMAS_MASK;
 
-/* Enable receiver and transmitter */
+  /* Enable receiver and transmitter */
   UART2_C2 |= UART_C2_RE_MASK;
   UART2_C2 |= UART_C2_TE_MASK;
 
@@ -88,7 +86,7 @@ bool UART_Init(const uint32_t baudRate, const uint32_t moduleClk){
   FIFO_Init(&RxFIFO);
   FIFO_Init(&TxFIFO);
 
-    return true;
+  return true;
 }
 
 bool UART_InChar(uint8_t * const dataPtr){
@@ -103,12 +101,10 @@ bool UART_OutChar(const uint8_t data){
 
 void UART_Poll(void){
   /* If the RDRF flag is set, put data from UART data register into RxFIFO buffer */
-  if (UART2_S1 & UART_S1_RDRF_MASK){
-      FIFO_Put(&RxFIFO,UART2_D);	//  Need to fix. Upon tower sending data to pc, instead of 0x00 it sends 0x80. Not sure why
-  }
+  if (UART2_S1 & UART_S1_RDRF_MASK)
+    FIFO_Put(&RxFIFO,UART2_D);	//  Need to fix. Upon tower sending data to pc, instead of 0x00 it sends 0x80. Not sure why
 
   /* If the TDRE flag is set, get data from TxFIFO into UART data register */
-  if(UART2_S1 & UART_S1_TDRE_MASK){
-      FIFO_Get(&TxFIFO,(uint8_t *)&UART2_D);
-  }
+  if(UART2_S1 & UART_S1_TDRE_MASK)
+    FIFO_Get(&TxFIFO,(uint8_t *)&UART2_D);
 }
